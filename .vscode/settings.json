@@ -1,0 +1,56 @@
+{
+  "github.copilot.chat.localeOverride": "pt-br",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.inputValidationLength": 100,
+  "git.inputValidationSubjectLength": 50,
+  "[git-commit]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [50, 72]
+  },
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.language": "pt-BR",
+  "conventionalCommits.lineBreak": "\n\n",
+  "conventionalCommits.scopes": [],
+  "conventionalCommits.types": {
+    "feat": {
+      "description": "nova funcionalidade",
+      "title": "Features"
+    },
+    "fix": {
+      "description": "correção de bug",
+      "title": "Bug Fixes"
+    },
+    "docs": {
+      "description": "documentação",
+      "title": "Documentation"
+    },
+    "style": {
+      "description": "alterações de estilo (formatação, ponto-e-vírgula, etc)",
+      "title": "Styles"
+    },
+    "refactor": {
+      "description": "refatoração de código",
+      "title": "Code Refactoring"
+    },
+    "perf": {
+      "description": "melhoria de performance",
+      "title": "Performance Improvements"
+    },
+    "test": {
+      "description": "testes",
+      "title": "Tests"
+    },
+    "chore": {
+      "description": "tarefas (atualizações de dependências, configurações, etc)",
+      "title": "Chores"
+    },
+    "ci": {
+      "description": "integração contínua",
+      "title": "CI"
+    }
+  }
+}
