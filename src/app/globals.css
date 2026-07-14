@@ -1,68 +1,246 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
+@theme {
+  --color-pitch:             #060f06;
+  --color-dugout:            #0a1c0a;
+  --color-navbar:            #161e00;
+  --color-tunnel:            #1c1b1b;
+  --color-locker:            #1a2e1a;
+  --color-bench:             #1f361f;
+  --color-stands:            #353534;
+  --color-bright:            #3a3a3a;
 
-  /* Quinas mais retas do seu design (Soft mas disciplinado) */
-  --radius-sm: 4px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
+  --color-verde:             #009739;
+  --color-verde-dark:        #006e27;
+  --color-verde-container:   #23a646;
+  --color-verde-fixed:       #00b844;
+  --color-verde-muted:       #00531c;
+  --color-verde-aside-bg:    rgba(0, 151, 57, 0.10);
+
+  --color-ouro:              #ffdf00;
+  --color-ouro-fixed:        #ffe243;
+  --color-ouro-dim:          #e3c600;
+  --color-ouro-text:         #393000;
+
+  --color-azul:              #748de0;
+  --color-azul-deep:         #042978;
+  --color-azul-fixed:        #b5c4ff;
+
+  --color-on-surface:        #e5e2e1;
+  --color-on-surface-muted:  #bdcab9;
+  --color-on-primary:        #003911;
+  --color-on-ouro:           #393000;
+
+  --color-outline:           #879484;
+  --color-outline-dim:       #3e4a3d;
+
+  --color-error:             #ffb4ab;
+  --color-error-container:   #93000a;
+  --color-on-error:          #690005;
+
+  --font-display:   "Anybody", sans-serif;
+  --font-body:      "Hanken Grotesk", sans-serif;
+  --font-mono:      "JetBrains Mono", monospace;
+
+  --text-display-lg:    64px;
+  --text-display-mobile: 40px;
+  --text-headline-lg:   32px;
+  --text-headline-md:   24px;
+  --text-body-lg:       18px;
+  --text-body-md:       16px;
+  --text-label-md:      14px;
+  --text-label-sm:      12px;
+
+  --radius-none:  0px;
+  --radius-score: 2px;
+  --radius-sm:    2px;
+  --radius:       4px;
+  --radius-md:    6px;
+  --radius-lg:    8px;
+  --radius-xl:    12px;
+  --radius-full:  9999px;
+
+  --spacing-xs:     8px;
+  --spacing-sm:     16px;
+  --spacing-md:     24px;
+  --spacing-lg:     40px;
+  --spacing-xl:     64px;
+  --spacing-gutter: 20px;
+  --margin-mobile:  16px;
+  --margin-desktop: 48px;
 }
 
-:root {
-  /* Fundo Escuro do Pub (Preto com tom levemente esverdeado de fundo) */
-  --background: #0b0f07;               
-  --foreground: #ffffff;               /* Texto principal em branco puro */
+@layer base {
+  :root {
+    --background:             120 30% 8%;
+    --foreground:             30 5% 89%;
 
-  /* Cards (Onde ficam os jogos e formulários) */
-  --card: #11160d;                     /* Cinza esverdeado escuro dos cards */
-  --card-foreground: #ffffff;
-  --popover: #11160d;                  
-  --popover-foreground: #ffffff;
+    --card:                   120 25% 14%;
+    --card-foreground:        30 5% 89%;
 
-  /* O Destaque Principal: Verde Limão / Neon do seu Botão "Entrar em Campo" */
-  --primary: #f5df00;                  /* O Amarelo/Verde Limão brilhante dos botões */
-  --primary-foreground: #0b0f07;       /* Letra escura dentro do botão brilhante */
-  
-  /* Cor Secundária (Para os inputs e botões menos chamativos) */
-  --secondary: #1f2519;                
-  --secondary-foreground: #ffffff;
+    --popover:                120 25% 17%;
+    --popover-foreground:     30 5% 89%;
 
-  /* Detalhes de textos de apoio e bordas de separação */
-  --muted: #1f2519;                    
-  --muted-foreground: #8a9382;         /* Cinza oliva para textos de apoio */
-  --accent: #1c2216;                   
-  --accent-foreground: #ffffff;
+    --primary:                145 100% 30%;
+    --primary-foreground:     0 0% 100%;
 
-  /* Bordas das tabelas e inputs */
-  --border: #2c3524;                   /* A borda verde-oliva escura dos cards */
-  --input: #2c3524;
-  --ring: #f5df00;                     /* Foco com o brilho do limão */
+    --secondary:              20 2% 22%;
+    --secondary-foreground:   30 5% 89%;
 
-  --destructive: #ffb4ab;
-  --destructive-foreground: #690005;
+    --muted:                  120 10% 16%;
+    --muted-foreground:       90 10% 57%;
+
+    --accent:                 52 100% 50%;
+    --accent-foreground:      0 0% 22%;
+
+    --destructive:            4 100% 83%;
+    --destructive-foreground: 4 100% 21%;
+
+    --border:                 130 10% 38%;
+    --input:                  20 2% 22%;
+    --ring:                   51 100% 52%;
+
+    --radius: 0.25rem;
+  }
+
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-dugout);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-on-surface);
+  }
+
+  a {
+    color: var(--color-verde);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-verde-fixed);
+  }
+}
+
+@layer utilities {
+
+  .surface-pitch    { background-color: var(--color-pitch); }
+  .surface-dugout   { background-color: var(--color-dugout); }
+  .surface-tunnel   { background-color: var(--color-tunnel); }
+  .surface-locker   { background-color: var(--color-locker); }
+  .surface-bench    { background-color: var(--color-bench); }
+  .surface-stands   { background-color: var(--color-stands); }
+
+  .border-verde-subtle  { border: 1px solid rgba(0, 151, 57, 0.15); }
+  .border-white-subtle  { border: 1px solid rgba(255, 255, 255, 0.12); }
+  }
+
+  .aside-link-active {
+    color: var(--color-verde);
+    background-color: var(--color-verde-aside-bg);
+  }
+  .aside-link-inactive {
+    color: #c4c8ac;
+  }
+  .aside-link-inactive:hover {
+    color: var(--color-verde);
+    background-color: var(--color-verde-aside-bg);
+  }
+  .surface-navbar { background-color: var(--color-navbar);
+
+  .focus-stadium:focus-visible {
+    outline: none;
+    border-color: var(--color-ouro);
+    box-shadow: 0 0 0 2px rgba(255, 223, 10, 0.35);
+  }
+
+  .font-display { font-family: var(--font-display); }
+  .font-body    { font-family: var(--font-body); }
+  .font-scoreboard { font-family: var(--font-mono); }
+
+  .score-badge {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-score);
+    padding: 2px 6px;
+    background-color: var(--color-stands);
+    color: var(--color-on-surface);
+  }
+
+  .live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: #ef4444;
+    animation: pulse-live 1.5s ease-in-out infinite;
+  }
+
+  .nav-active {
+    color: var(--color-ouro);
+    border-bottom: 2px solid var(--color-ouro);
+  }
+
+  .gradient-brasil {
+    background: linear-gradient(
+      90deg,
+      var(--color-verde) 0%,
+      var(--color-ouro)  100%
+    );
+  }
+
+  .card-featured-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(116, 141, 224, 0.18) 0%,
+      transparent 60%
+    );
+  }
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes pulse-btn {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(101, 223, 118, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(101, 223, 118, 0); }
+}
+
+.btn-pulse {
+  animation: pulse-btn 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot,
+  .btn-pulse {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
