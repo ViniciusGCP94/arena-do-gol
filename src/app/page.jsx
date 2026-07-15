@@ -1,3 +1,5 @@
+
+
 function HomePage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center text-center">
@@ -7,7 +9,7 @@ function HomePage() {
       <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight max-w-3xl leading-none mb-6">
         A Copa do Mundo é no <span className="text-primary">Stadium Pulse</span>.
       </h1>
-      <p className="text-muted-foreground max-w-xl text-base md:text-lg mb-8">
+      <p className="text-muted-foreground text-base md:text-lg mb-8">
         Junte-se à nossa torcida, sinta a emoção de cada lance em 4K e garanta o seu lugar no melhor clima de arquibancada da cidade.
       </p>
       <div className="flex gap-4">
