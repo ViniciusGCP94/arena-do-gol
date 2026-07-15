@@ -7,7 +7,7 @@ const cardapioMock = [
         preco: 5.90,
         categoria: "prato",
         selecao: "Brasil",
-        tags: ["contém_gluten"]
+        tags: ["contem_gluten"]
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const cardapioMock = [
         preco: 12.90,
         categoria: "bebida",
         selecao: "Brasil",
-        tags: ["contém_gluten"]
+        tags: ["contem_gluten"]
     }, 
     {
         id: 3,
@@ -25,7 +25,7 @@ const cardapioMock = [
         preco: 15.90,
         categoria: "prato",
         selecao: "Alemanha",
-        tags: ["contém_gluten"]
+        tags: ["contem_gluten"]
     },
     {
         id: 4,
@@ -52,7 +52,7 @@ const cardapioMock = [
         preco: 10.90,
         categoria: "bebida",
         selecao: "México",
-        tags: ["contém_gluten"]
+        tags: ["contem_gluten"]
     },
     {
         id: 7,
@@ -64,3 +64,5 @@ const cardapioMock = [
         tags: ["sem_gluten"]
     }
 ];
+
+export { cardapioMock };
