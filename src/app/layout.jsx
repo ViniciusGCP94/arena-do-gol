@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "@/app/globals.css";
 
 export const metadata = {
@@ -13,16 +14,29 @@ function RootLayout({ children }) {
         <header className="border-b border-border bg-[#11160d]/80 backdrop-blur sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              {/* Logo temporária combinando o verde/amarelo neon */}
-              <span className="text-primary font-black text-xl tracking-wider">
+              {/* O Logo agora também é um link para voltar à Home */}
+              <Link href="/" className="text-primary font-black text-xl tracking-wider hover:opacity-90 transition-opacity">
                 STADIUM PULSE
-              </span>
+              </Link>
             </div>
             
+            {/* LINKS DE NAVEGAÇÃO COM <Link> */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-              <a href="#" className="hover:text-primary transition-colors">Início</a>
-              <a href="#" className="hover:text-primary transition-colors">Jogos</a>
-              <a href="#" className="hover:text-primary transition-colors">Reservar</a>
+              <Link href="/" className="text-primary-foreground hover:text-primary transition-colors">
+                Início
+              </Link>
+              <Link href="/jogos" className="text-primary-foreground hover:text-primary transition-colors">
+                Jogos
+              </Link>
+              <Link href="/cardapio" className="text-primary-foreground hover:text-primary transition-colors">
+                Cardápio
+              </Link>
+              <Link href="/promocoes" className="text-primary-foreground hover:text-primary transition-colors">
+                Promoções
+              </Link>
+              <Link href="/eventos" className="text-primary-foreground hover:text-primary transition-colors">
+                Eventos
+              </Link>
             </nav>
 
             <div className="flex items-center gap-4">
@@ -33,8 +47,8 @@ function RootLayout({ children }) {
           </div>
         </header>
 
-        {/* CONTEÚDO PRINCIPAL (ONDE VÃO FICAR AS PÁGINAS) */}
-        <main className="flex-grow">
+        {/* CONTEÚDO PRINCIPAL */}
+        <main className="grow">
           {children}
         </main>
 
@@ -43,8 +57,8 @@ function RootLayout({ children }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p>© 2026 Stadium Pulse - O QG oficial da Seleção. Todos os direitos reservados.</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-primary transition-colors">Privacidade</a>
-              <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
+              <Link href="/privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
+              <Link href="/termos" className="hover:text-primary transition-colors">Termos de Uso</Link>
             </div>
           </div>
         </footer>
@@ -53,4 +67,4 @@ function RootLayout({ children }) {
   );
 }
 
-export default RootLayout;
+export default RootLayout; // No final! 😉
