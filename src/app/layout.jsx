@@ -1,5 +1,9 @@
 import Link from "next/link";
 import "@/app/globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata = {
   title: "Stadium Pulse - Copa 2026 Brasil",
@@ -8,7 +12,7 @@ export const metadata = {
 
 function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={cn("font-sans", geist.variable)}>
       <body className="min-h-screen bg-background text-foreground flex flex-col font-sans antialiased">
         {/* HEADER / CABEÇALHO */}
         <header className="border-b border-border bg-[#11160d]/80 backdrop-blur sticky top-0 z-50">
