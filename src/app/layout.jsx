@@ -1,9 +1,27 @@
 import Link from "next/link";
 import "@/app/globals.css";
-import { Geist } from "next/font/google";
+import { Anton, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Zap } from "lucide-react"
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Stadium Pulse - Copa 2026 Brasil",
@@ -12,15 +30,16 @@ export const metadata = {
 
 function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={cn("font-sans", geist.variable)}>
+    <html lang="pt-BR" className={cn(anton.variable, plusJakartaSans.variable, spaceGrotesk.variable)}>
       <body className="min-h-screen bg-background text-foreground flex flex-col font-sans antialiased">
         {/* HEADER / CABEÇALHO */}
-        <header className="border-b border-border bg-[#11160d]/80 backdrop-blur sticky top-0 z-50">
+        <header className="border-b border-border px-4 bg-[#11160d]/80 backdrop-blur sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2">
               {/* O Logo agora também é um link para voltar à Home */}
-              <Link href="/" className="text-primary font-black text-xl tracking-wider hover:opacity-90 transition-opacity">
-                STADIUM PULSE
+              <Link href="/" className="text-ouro font-black text-lg tracking-wider hover:opacity-90 transition-opacity">
+                <Zap size={24} className="bg-ouro text-navbar border-2 border-ouro rounded-xl inline-block mr-1 -translate-y-px" aria-hidden="true" />
+                ARENA DO GOL
               </Link>
             </div>
             
@@ -44,7 +63,7 @@ function RootLayout({ children }) {
             </nav>
 
             <div className="flex items-center gap-4">
-              <button className="bg-primary text-primary-foreground font-bold px-4 py-2 rounded text-xs tracking-wider uppercase transition-all hover:opacity-90">
+              <button className="bg-ouro text-navbar font-bold px-4 py-2 rounded text-xs tracking-wider uppercase transition-all hover:opacity-90">
                 Entrar
               </button>
             </div>
