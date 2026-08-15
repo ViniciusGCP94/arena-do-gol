@@ -10,8 +10,14 @@ function JogosPage() {
 
   const jogosFiltrados = jogosMock?.filter((jogo) => {
     if (filtroAtivo === "fase-de-grupos") return true;
+    if (filtroAtivo === "selecao-brasileira") {
+      return jogo.timeA.nome === "Brasil" || jogo.timeB.nome === "Brasil";
+    }
+    if (filtroAtivo === "bebo-stadium" || filtroAtivo === "menu-especial") {
+      return Boolean(jogo.promocao);
+    }
     return jogo.categoria === filtroAtivo;
-  });
+});
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8 sm:px-8">

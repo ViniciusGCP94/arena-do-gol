@@ -32,7 +32,7 @@ function JogosAside({ filtroAtivo, setFiltroAtivo }) {
                   className={`w-full flex items-center gap-3 px-3 py-2.5 rounded text-xs font-bold uppercase transition-colors text-left ${
                     isSelected
                       ? "bg-verde text-on-primary border-l-4 border-ouro"
-                      : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                      : "text-on-surface-muted hover:bg-accent hover:text-foreground"
                   }`}
                 >
                   <Icone className="w-4 h-4 shrink-0" aria-hidden="true" />
