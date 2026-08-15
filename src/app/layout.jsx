@@ -71,7 +71,7 @@ function RootLayout({ children }) {
         </header>
 
         {/* CONTEÚDO PRINCIPAL */}
-        <main className="grow">
+        <main className="grow w-full overflow-x-hidden">
           {children}
         </main>
 
