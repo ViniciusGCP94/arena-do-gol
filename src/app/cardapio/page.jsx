@@ -22,7 +22,7 @@ async function CardapioPage({ searchParams }) {
         <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">
           Nosso Cardápio Temático
         </h1>
-        <p className="text-muted-foreground text-sm md:text-base max-w-[576px] mx-auto leading-relaxed mb-8">
+        <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-8">
           Pratos e bebidas artesanais inspirados nas seleções da Copa do Mundo. 
           Use os filtros abaixo para encontrar opções para sua dieta.
         </p>
