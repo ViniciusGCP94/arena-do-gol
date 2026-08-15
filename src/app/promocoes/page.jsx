@@ -1,10 +1,8 @@
-import { jogosMock } from "@/data/jogos";
 import { promocoesMock } from "@/data/promocoes";
+import { jogosMock } from "@/data/jogos";
 import PromocaoCard from "@/components/PromocaoCard";
 
 async function PromocoesPage() {
-  const jogosComPromo = jogosMock.filter((jogo) => jogo.promocao);
-
   return (
     <main className="container mx-auto py-12 px-4 max-w-7xl">
       <header className="text-center mb-12 w-full">
@@ -19,22 +17,24 @@ async function PromocoesPage() {
         </p>
       </header>
 
-      {/* Grid de Promoções */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {/* Promoção Fixa */}
         <PromocaoCard
           icone="🔥"
           badge="FIXA"
           titulo="Happy Hour da Copa"
           descricao="De segunda a sexta-feira, das 17h às 19h, todos os drinks do cardápio saem com 20% de desconto!"
-          rodapeTexto="Segunda a Sexta"
+          rodapeTexto="🗓️ Segunda a Sexta"
           rodapeLink="/cardapio"
           rodapeLinkTexto="Ver Drinks"
         />
 
-        {/* Promoções Especiais do Mock */}
         {promocoesMock.map((promo) => {
           const jogoRelacionado = jogosMock.find((j) => j.id === promo.jogoId);
+
+          // Formatação simples da data (AAAA-MM-DD -> DD/MM/AAAA)
+          const dataFormatada = jogoRelacionado?.data 
+            ? `${jogoRelacionado.data.split('-').reverse().join('/')} às ${jogoRelacionado.horario}`
+            : "Durante o jogo";
 
           return (
             <PromocaoCard
@@ -43,11 +43,7 @@ async function PromocoesPage() {
               titulo={promo.titulo}
               destaque={promo.descricao}
               descricao={promo.regras}
-              rodapeTexto={
-                jogoRelacionado
-                  ? `📅 ${jogoRelacionado.data} às ${jogoRelacionado.horario}`
-                  : "Durante o jogo"
-              }
+              rodapeTexto={`📅 ${dataFormatada}`}
               rodapeLink="/jogos"
               rodapeLinkTexto="Ver Partida"
             />

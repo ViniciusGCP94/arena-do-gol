@@ -29,9 +29,14 @@ function PromocaoCard({ titulo, descricao, destaque, badge, rodapeTexto, rodapeL
         )}
       </div>
 
-      <div className="pt-4 border-t border-border/50 flex justify-between items-center">
-        <span className="text-xs font-bold text-muted-foreground">{rodapeTexto}</span>
-        <Link href={rodapeLink} className="text-xs font-bold text-foreground hover:underline">
+      <div className="pt-4 border-t border-border/50 flex justify-between items-center gap-4">
+        <span className="text-xs font-semibold text-muted-foreground flex items-center gap-1.5">
+          {rodapeTexto}
+        </span>
+        <Link 
+          href={rodapeLink} 
+          className="text-xs font-bold uppercase tracking-wide bg-bright text-secondary-foreground hover:bg-primary hover:text-primary-foreground py-2 px-3.5 rounded transition-colors whitespace-nowrap"
+        >
           {rodapeLinkTexto} →
         </Link>
       </div>
