@@ -28,7 +28,7 @@ async function CardapioPage({ searchParams }) {
         </p>
 
         <div className="flex justify-center">
-          <FiltroCardapio />
+            <FiltroCardapio />
         </div>
       </header>
 
