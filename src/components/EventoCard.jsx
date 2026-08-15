@@ -1,35 +1,62 @@
 import Link from "next/link";
 
 function EventoCard({ evento }) {
-  const { tipo, titulo, descricao, horario, local } = evento;
+  const { titulo, categoria, data, horario, local, descricao, vagas, imagemIcone, destaque } = evento;
+
+  const dataFormatada = data ? data.split("-").reverse().join("/") : "";
 
   return (
-    <article className="border border-border p-6 rounded-lg bg-card text-card-foreground shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-primary/50 transition-colors">
-      {/* Esquerda: Informações do Evento */}
-      <div className="flex-1">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-xs font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">
-            {tipo}
+    <article className={`border p-6 rounded-lg bg-pitch text-card-foreground shadow-sm flex flex-col justify-between relative overflow-hidden transition-all ${
+      destaque ? "border-ouro/60 hover:border-ouro" : "border-border/80 hover:border-verde/50"
+    }`}>
+      {destaque && (
+        <div className="absolute top-0 right-0 bg-ouro text-navbar font-black text-[10px] uppercase px-3 py-1 rounded-bl">
+          Destaque
+        </div>
+      )}
+
+      <div>
+        {/* ÍCONE E CATEGORIA COM ALTO CONTRASTE */}
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-3xl leading-none flex items-center justify-center shrink-0">
+            {imagemIcone || "⚽"}
+          </span>
+          <span className="text-[11px] font-extrabold uppercase tracking-wider bg-dugout text-ouro border border-ouro/30 px-3 py-1 rounded-md shadow-sm">
+            {categoria}
           </span>
         </div>
-        <h3 className="font-extrabold text-xl mb-2">{titulo}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
-          {descricao}
+
+        <h3 className="font-extrabold text-xl mb-2 text-white">{titulo}</h3>
+        
+        <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
+          {descricao || "Descrição não disponível"}
         </p>
+
+        {/* CONTAINER DE INFORMAÇÕES */}
+        <div className="space-y-2 text-xs bg-dugout p-3.5 rounded-md border border-border/60 mb-4">
+          <p className="flex items-center gap-2 font-medium text-foreground">
+            <span>📅</span> {dataFormatada ? `${dataFormatada} às ${horario}` : horario}
+          </p>
+          <p className="flex items-center gap-2 font-medium text-foreground">
+            <span>📍</span> {local}
+          </p>
+          {vagas && (
+            <p className="flex items-center gap-2 font-semibold text-ouro">
+              <span>🎟️</span> {vagas}
+            </p>
+          )}
+        </div>
       </div>
 
-      {/* Direita: Datas e Ação */}
-      <div className="flex flex-col justify-center min-w-[200px] border-t md:border-t-0 md:border-l border-border/50 pt-4 md:pt-0 md:pl-6 text-sm">
-        <div className="space-y-1 mb-4">
-          <p className="text-muted-foreground">🕒 {horario}</p>
-          <p className="text-muted-foreground">📍 {local}</p>
-        </div>
-
-        <Link
-          href="/jogos"
-          className="text-center font-bold text-xs uppercase bg-secondary text-secondary-foreground py-2.5 px-4 rounded hover:bg-accent transition-colors"
+      <div className="pt-4 border-t border-border/40 flex justify-between items-center gap-4">
+        <span className="text-xs font-semibold text-muted-foreground">
+          {horario} h
+        </span>
+        <Link 
+          href={`/eventos#${evento.id}`} 
+          className="text-xs font-bold uppercase tracking-wider text-verde-fixed hover:text-ouro bg-dugout border border-verde/30 hover:border-ouro/50 py-2 px-4 rounded-md transition-all duration-200 whitespace-nowrap"
         >
-          Garantir meu Lugar
+          Garantir Lugar →
         </Link>
       </div>
     </article>
