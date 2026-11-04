@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <div className="w-full flex flex-col">
       {/* HERO SECTION */}
-      <section className="max-w-7xl w-full mx-auto px-4 py-20 flex flex-col items-start text-left sm:px-10 sm:min-h-[calc(100dvh-4rem)] sm:justify-center lg:px-8">
+      <section className="max-w-7xl w-full mx-auto py-20 flex flex-col items-start text-left sm:px-10 sm:min-h-[calc(100dvh-4rem)] sm:justify-center">
         <span className="bg-verde border-l-4 border-ouro px-4 text-on-primary font-bold tracking-widest text-sm uppercase mb-4 sm:mb-8">
           Rumo ao Hexa 2026
         </span>
