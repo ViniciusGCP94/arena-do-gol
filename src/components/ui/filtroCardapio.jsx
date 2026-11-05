@@ -15,16 +15,16 @@ function FiltroCardapio() {
     { id: "todos", label: "Todos" },
     { id: "vegetariano", label: "Vegetariano" },
     { id: "sem_gluten", label: "Sem Glúten" },
-    { id: "contem_gluten", label: "Contém Glúten" } // Dica: mudei "contém_gluten" para "contem_gluten" sem acento para facilitar a URL!
+    { id: "contem_gluten", label: "Contém Glúten" } 
   ];
 
   function handleFiltro(tagId) {
     const params = new URLSearchParams(searchParams);
     
     if (tagId === "todos") {
-      params.delete("tag"); // Limpa a URL se clicar em "Todos"
+      params.delete("tag");
     } else {
-      params.set("tag", tagId); // Define a tag selecionada (ex: ?tag=vegetariano)
+      params.set("tag", tagId);
     }
 
     // Empurra a nova URL de forma suave
@@ -33,19 +33,22 @@ function FiltroCardapio() {
 
   return (
     <div className="flex gap-2 flex-wrap">
-      {tagsDisponiveis.map((tag) => (
+      {tagsDisponiveis.map((tag) => {
+        const isSelected = tag.id === tagAtiva;
+        return (
         <button
-          key={tag.id}
-          onClick={() => handleFiltro(tag.id)}
-          className={`px-4 py-2 rounded-md transition-colors ${
-            tagAtiva === tag.id
-              ? "bg-primary text-primary-foreground font-bold" // Aplique as classes do seu tema ou do shadcn aqui!
-              : "bg-secondary text-secondary-foreground"
-          }`}
-        >
+            key={tag.id}
+            onClick={() => handleFiltro(tag.id)}
+            className={`px-4 py-2 text-xs uppercase font-bold tracking-wider rounded-md transition-all duration-200 cursor-pointer ${
+              isSelected
+                ? "bg-ouro text-black shadow-md scale-105"
+                : "text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+            }`}
+          >
           {tag.label}
         </button>
-      ))}
+        );
+      })}
     </div>
   );
 }

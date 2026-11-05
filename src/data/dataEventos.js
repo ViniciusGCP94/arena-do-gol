@@ -1,34 +1,50 @@
-const eventosMock = [
+export const eventosMock = [
   {
-    id: 1,
-    titulo: "Super Trivia da Copa",
-    descricao: "Teste seus conhecimentos sobre a história das Copas do Mundo! O grupo vencedor ganha um balde de Chopp por conta da casa.",
+    id: "evento-1",
+    titulo: "Transmissão Ao Vivo: Brasil x Sérvia",
+    categoria: "Transmissão",
     data: "2026-06-11",
-    horario: "19:00", // No intervalo do jogo de abertura
-    local: "Palco Central da Arena",
-    capacidadeMax: 50,
-    status: "Confirmado"
+    horario: "18:00",
+    local: "Telão Principal - Arena do Gol",
+    descricao: "Assista à estreia do Brasil com som de cinema, narração exclusiva e chopp em dobro durante o tempo regulamentar.",
+    destaque: true,
+    vagas: "Entrada Gratuita (Sujeita a lotação)",
+    imagemIcone: "📺",
   },
   {
-    id: 2,
-    titulo: "Sorteio da Camisa Oficial",
-    descricao: "A cada R$ 50,00 em consumação nas bebidas temáticas, você ganha um cupom para concorrer a uma camisa oficial da Seleção Brasileira autografada.",
-    data: "2026-06-12",
-    horario: "15:00", // Aquecimento para Brasil vs França
-    local: "Toda a Arena",
-    capacidadeMax: 120,
-    status: "Confirmado"
+    id: "evento-2",
+    titulo: "Samba & Pagode Pós-Jogo",
+    categoria: "Atração Musical",
+    data: "2026-06-11",
+    horario: "20:30",
+    local: "Palco Central",
+    descricao: "Comemoração após o apito final com o grupo Resenha do Hexa. Venha festejar com muita roda de samba!",
+    destaque: false,
+    vagas: "Couvert: R$ 15,00",
+    imagemIcone: "🥁",
   },
   {
-    id: 3,
-    titulo: "DJ Set Especial: Ritmos do Mundo",
-    descricao: "Após o apito final de Brasil vs França, comemore (ou console-se) com um set exclusivo mesclando clássicos do samba, MPB e pop francês.",
+    id: "evento-3",
+    titulo: "Desafio do Palpite & Quiz da Seleção",
+    categoria: "Interativo",
     data: "2026-06-12",
-    horario: "18:15", // Pós-jogo
-    local: "Pista Arena",
-    capacidadeMax: 150,
-    status: "Confirmado"
-  }
+    horario: "15:00",
+    local: "Espaço Quiz",
+    descricao: "Teste seus conhecimentos sobre a história da Copa do Mundo e concorra a baldes de cerveja e camisas oficiais.",
+    destaque: false,
+    vagas: "Inscrição Gratuita na hora",
+    imagemIcone: "🏆",
+  },
+  {
+    id: "evento-4",
+    titulo: "Transmissão Ao Vivo: Brasil x Suíça",
+    categoria: "Transmissão",
+    data: "2026-06-16",
+    horario: "16:00",
+    local: "Telão Principal - Arena do Gol",
+    descricao: "Segundo jogo do Brasil na fase de grupos. Abertura do portão às 14h com roda de caipirinha dupla.",
+    destaque: true,
+    vagas: "Reservas antecipadas disponíveis",
+    imagemIcone: "⚽",
+  },
 ];
-
-export { eventosMock };

@@ -67,7 +67,7 @@
   --spacing-sm:     16px;
   --spacing-md:     24px;
   --spacing-lg:     40px;
-  --spacing-xl:     64px;
+  --spacing-huge:    64px;
   --spacing-gutter: 20px;
   --margin-mobile:  16px;
   --margin-desktop: 48px;
@@ -75,25 +75,25 @@
 
 @layer base {
   :root {
-    --background:             120 30% 8%;
-    --foreground:             30 5% 89%;
-    --card:                   120 25% 14%;
-    --card-foreground:        30 5% 89%;
-    --popover:                120 25% 17%;
-    --popover-foreground:     30 5% 89%;
-    --primary:                145 100% 30%;
-    --primary-foreground:     0 0% 100%;
-    --secondary:              20 2% 22%;
-    --secondary-foreground:   30 5% 89%;
-    --muted:                  120 10% 16%;
-    --muted-foreground:       90 10% 57%;
-    --accent:                 52 100% 50%;
-    --accent-foreground:      0 0% 22%;
-    --destructive:            4 100% 83%;
-    --destructive-foreground: 4 100% 21%;
-    --border:                 130 10% 38%;
-    --input:                  20 2% 22%;
-    --ring:                   52 100% 50%;
+    --background:             hsl(120 30% 8%);
+    --foreground:             hsl(30 5% 89%);
+    --card:                   hsl(120 25% 14%);
+    --card-foreground:        hsl(30 5% 89%);
+    --popover:                hsl(120 25% 17%);
+    --popover-foreground:     hsl(30 5% 89%);
+    --primary:                hsl(145 100% 30%);
+    --primary-foreground:     hsl(0 0% 100%);
+    --secondary:              hsl(20 2% 22%);
+    --secondary-foreground:   hsl(30 5% 89%);
+    --muted:                  hsl(120 10% 16%);
+    --muted-foreground:       hsl(90 10% 57%);
+    --accent:                 hsl(52 100% 50%);
+    --accent-foreground:      hsl(0 0% 22%);
+    --destructive:            hsl(4 100% 83%);
+    --destructive-foreground: hsl(4 100% 21%);
+    --border:                 hsl(130 10% 38%);
+    --input:                  hsl(20 2% 22%);
+    --ring:                   hsl(52 100% 50%);
     --radius:                 0.25rem;
   }
 }
@@ -108,8 +108,8 @@
   }
 
   body {
-    background-color: var(--color-dugout);
-    color: var(--color-on-surface);
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 24px;

@@ -1,28 +1,27 @@
-const jogosMock = [
+// src/data/jogos.js
+export const jogosMock = [
   {
-    id: 1,
+    id: "1",
+    rodada: "FASE DE GRUPOS • RODADA 1",
     status: "AO VIVO",
-    rodada: "Fase de Grupos • Rodada 1",
-    grupo: "Grupo A",
+    timeA: { nome: "México", gols: 2, sigla: "MX" },
+    timeB: { nome: "Estados Unidos", gols: 1, sigla: "US" },
     data: "2026-06-11",
     horario: "18:00",
     local: "Estádio Azteca, Cidade do México",
-    timeA: { nome: "México", slug: "MEX", gols: 2 },
-    timeB: { nome: "Estados Unidos", slug: "USA", gols: 1 },
-    promocao: "Double Chopp Heineken durante todo o jogo!"
+    promocao: "Double Chopp Heineken durante todo o jogo!",
+    categoria: "fase-de-grupos",
   },
   {
-    id: 2,
+    id: "2",
+    rodada: "FASE DE GRUPOS • RODADA 1",
     status: "AGENDADO",
-    rodada: "Fase de Grupos • Rodada 1",
-    grupo: "Grupo D",
+    timeA: { nome: "Brasil", gols: 0, sigla: "BR" },
+    timeB: { nome: "França", gols: 0, sigla: "FR" },
     data: "2026-06-12",
     horario: "16:00",
     local: "SoFi Stadium, Los Angeles",
-    timeA: { nome: "Brasil", slug: "BRA", gols: null },
-    timeB: { nome: "França", slug: "FRA", gols: null },
-    promocao: "Camisa do Brasil = 15% de desconto no combo Hexa."
-  }
+    promocao: "Camisa do Brasil = 15% de desconto no combo Hexa.",
+    categoria: "fase-de-grupos",
+  },
 ];
-
-export { jogosMock };
